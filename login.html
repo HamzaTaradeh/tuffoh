@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>تسجيل الدخول | بوابة المستخدم</title>
+  <meta name="description" content="صفحة تسجيل دخول خاصة لبوابة المستخدم. جاهزة لاستلام بيانات اسم المستخدم وكلمة المرور." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { background: linear-gradient(180deg, #f7f9f8 0%, #e6f1ed 60%, #fff 100%); }
+    .login-page { min-height: 100vh; display: grid; place-items: center; padding: 32px 16px; }
+    .login-card { width: min(540px, 100%); background: #fff; border-radius: 28px; box-shadow: 0 30px 60px rgba(14,31,28,0.12); border: 1px solid rgba(14,31,28,0.08); padding: 42px 36px; }
+    .login-card__badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: #f6f7f5; color: #0e6b53; font-weight: 700; font-size: 13px; margin-bottom: 18px; }
+    .login-card__title { font-size: clamp(28px, 4vw, 34px); margin: 0 0 10px; font-weight: 800; color: #0e1f1c; }
+    .login-card__subtitle { margin: 0 0 28px; color: #55615f; line-height: 1.8; }
+    .login-form { display: grid; gap: 18px; }
+    .login-form.hidden { display: none; }
+    .login-switch { display: flex; gap: 12px; margin-bottom: 24px; }
+    .tab-btn {
+      border: 1px solid transparent; background: transparent; color: #4f5a56;
+      font-size: 14px; font-weight: 700; padding: 10px 16px; border-radius: 999px;
+      cursor: pointer; transition: all 0.2s ease;
+    }
+    .tab-btn:hover { background: rgba(14,107,83,0.08); }
+    .tab-btn.is-active {
+      background: #eaf4f0; color: #0e6b53; border-color: #cfe5db;
+    }
+    .login-form label { display: grid; gap: 8px; font-size: 14px; color: #1f312f; }
+    .login-form input { width: 100%; min-height: 52px; padding: 14px 16px; border-radius: 14px; border: 1px solid #d7e1dd; background: #f7faf8; color: #0e1f1c; }
+    .login-form input:focus { outline: 2px solid rgba(14,107,83,0.16); border-color: #0e6b53; }
+    .login-form button { margin-top: 4px; }
+    .login-status { margin-top: 18px; font-size: 14px; color: #6b7878; min-height: 22px; }
+    .login-status--success { color: #217b4c; }
+    .login-status--error { color: #b1322a; }
+    .login-footer { margin-top: 28px; font-size: 13px; color: #6b7878; line-height: 1.7; }
+    .login-footer strong { color: #0e6b53; }
+    .login-back { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; color: #0e6b53; font-weight: 700; }
+    .login-back svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+  <main class="login-page">
+    <section class="login-card">
+      <div class="login-card__badge">بوابة المستخدم</div>
+      <div class="login-switch" role="tablist">
+        <button type="button" id="tabLogin" class="tab-btn is-active" aria-selected="true">تسجيل الدخول</button>
+        <button type="button" id="tabRegister" class="tab-btn" aria-selected="false">إنشاء حساب</button>
+      </div>
+      <h1 class="login-card__title">سجل الدخول إلى حسابك</h1>
+      <p class="login-card__subtitle">أدخل بياناتك لتتمكن من الوصول إلى خدماتك الإلكترونية. هذه الصفحة جاهزة لاستلام اسم المستخدم وكلمة المرور.</p>
+      <form id="loginForm" class="login-form" method="POST" action="/login">
+        <label>
+          اسم المستخدم
+          <input name="username" type="text" autocomplete="username" placeholder="مثال: abdulrahman" required />
+        </label>
+        <label>
+          كلمة المرور
+          <input name="password" type="password" autocomplete="current-password" placeholder="أدخل كلمة المرور" required />
+        </label>
+        <button type="submit" class="btn btn--primary btn--block">تسجيل الدخول</button>
+      </form>
+      <form id="registerForm" class="login-form hidden" method="POST" action="/register">
+        <label>
+          الاسم الكامل
+          <input name="fullName" type="text" autocomplete="name" placeholder="أدخل اسمك الكامل" required />
+        </label>
+        <label>
+          البريد الإلكتروني
+          <input name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+        </label>
+        <label>
+          اسم المستخدم
+          <input name="username" type="text" autocomplete="username" placeholder="اختَر اسم مستخدم" required />
+        </label>
+        <label>
+          كلمة المرور
+          <input name="password" type="password" autocomplete="new-password" placeholder="أدخل كلمة المرور" required />
+        </label>
+        <label>
+          تأكيد كلمة المرور
+          <input name="confirmPassword" type="password" autocomplete="new-password" placeholder="أعد إدخال كلمة المرور" required />
+        </label>
+        <button type="submit" class="btn btn--primary btn--block">إنشاء حساب</button>
+      </form>
+      <div id="loginStatus" class="login-status"></div>
+      <p class="login-footer">يمكنك ربط النموذج بأي نقطة نهاية في الخلفية عبر المسار <code>/login</code> أو <code>/register</code> حسب الحالة.</p>
+      <a class="login-back" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        العودة للموقع
+      </a>
+    </section>
+  </main>
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    const status = document.getElementById('loginStatus');
+    const tabLogin = document.getElementById('tabLogin');
+    const tabRegister = document.getElementById('tabRegister');
+    const title = document.querySelector('.login-card__title');
+    const subtitle = document.querySelector('.login-card__subtitle');
+    const footer = document.querySelector('.login-footer');
+
+    const showStatus = (message, state = 'info') => {
+      status.textContent = message;
+      status.className = 'login-status';
+      if (state === 'success') status.classList.add('login-status--success');
+      if (state === 'error') status.classList.add('login-status--error');
+    };
+
+    const setMode = (mode) => {
+      const loginActive = mode === 'login';
+      loginForm.classList.toggle('hidden', !loginActive);
+      registerForm.classList.toggle('hidden', loginActive);
+      tabLogin.classList.toggle('is-active', loginActive);
+      tabRegister.classList.toggle('is-active', !loginActive);
+      tabLogin.setAttribute('aria-selected', loginActive.toString());
+      tabRegister.setAttribute('aria-selected', (!loginActive).toString());
+      title.textContent = loginActive ? 'سجل الدخول إلى حسابك' : 'أنشئ حساب جديد';
+      subtitle.textContent = loginActive
+        ? 'أدخل بياناتك لتتمكن من الوصول إلى خدماتك الإلكترونية. هذه الصفحة جاهزة لاستلام اسم المستخدم وكلمة المرور.'
+        : 'أدخل المعلومات اللازمة لإنشاء حساب جديد والوصول إلى الخدمات الإلكترونية.';
+      footer.innerHTML = loginActive
+        ? 'يمكنك ربط نموذج الدخول بأي نقطة نهاية في الخلفية عبر المسار <code>/login</code>.'
+        : 'يمكنك ربط نموذج إنشاء الحساب بأي نقطة نهاية في الخلفية عبر المسار <code>/register</code>.';
+      status.textContent = '';
+      status.className = 'login-status';
+    };
+
+    tabLogin.addEventListener('click', () => setMode('login'));
+    tabRegister.addEventListener('click', () => setMode('register'));
+
+    const submitForm = async (form, successMessage, errorRoute) => {
+      showStatus('يتم إرسال البيانات...', 'info');
+      const data = new FormData(form);
+      const payload = new URLSearchParams();
+      for (const [key, value] of data.entries()) payload.append(key, value);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: payload,
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
+
+        if (!response.ok) {
+          const text = await response.text();
+          throw new Error(text || response.statusText || 'خطأ في الخادم');
+        }
+
+        const result = await response.json().catch(() => null);
+        showStatus(result?.message || successMessage, 'success');
+      } catch (error) {
+        showStatus(`تعذر إرسال البيانات. تأكد من تشغيل الخلفية على المسار ${errorRoute}.`, 'error');
+      }
+    };
+
+    loginForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      submitForm(loginForm, 'تم تسجيل الدخول بنجاح. انتظر رد الخادم.', '/login');
+    });
+
+    registerForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const password = registerForm.querySelector('input[name="password"]').value;
+      const confirmPassword = registerForm.querySelector('input[name="confirmPassword"]').value;
+      if (password !== confirmPassword) {
+        showStatus('كلمتا المرور غير متطابقتين. رجاءً أعد المحاولة.', 'error');
+        return;
+      }
+      submitForm(registerForm, 'تم إنشاء الحساب بنجاح. انتظر تأكيد الخادم.', '/register');
+    });
+  </script>
+</body>
+</html>

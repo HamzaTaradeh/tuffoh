@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title data-i18n="brandName">بلدية تفوح — الموقع الرسمي</title>
+  <meta name="description" content="الموقع الرسمي لبلدية النخيل. خدمات البلديات الإلكترونية، طلبات التراخيص، الشكاوى، والمدفوعات." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e6b53'/%3E%3Cpath d='M16 6 L24 14 V25 H8 V14 Z' fill='%23fff'/%3E%3Crect x='13' y='18' width='6' height='7' fill='%230e6b53'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- =================== PUBLIC SITE =================== -->
+  <div id="view-public" class="view view--public is-active">
+
+    <!-- top bar -->
+    <div class="topbar">
+      <div class="topbar__inner">
+        <div class="topbar__links">
+          <a href="#about" data-i18n="topAbout">عن البلدية</a>
+          <a href="#news" data-i18n="topNews">الأخبار</a>
+          <a href="#contact" data-i18n="topContact">اتصل بنا</a>
+          <a href="#" data-i18n="topA11y">الوصولية</a>
+        </div>
+        <div class="topbar__meta">
+          <span class="topbar__date" id="hijriDate">السبت ١٩ محرم ١٤٤٧هـ</span>
+          <!-- language switcher -->
+          <div class="langswitch" role="group" aria-label="Language">
+            <button class="langswitch__btn is-active" data-lang-btn="ar" aria-label="العربية">ع</button>
+            <button class="langswitch__btn" data-lang-btn="en" aria-label="English">EN</button>
+          </div>
+          <a href="login.html" class="topbar__portal" data-i18n-aria="userPortal">
+            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0"/></svg>
+            <span data-i18n="userPortal">بوابة المستخدم</span>
+          </a>
+          <a href="#admin" class="topbar__portal topbar__portal--admin" data-i18n-aria="adminPortal">
+            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/></svg>
+            <span data-i18n="adminPortal">بوابة الإدارة</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- main nav -->
+    <header class="navbar" id="navbar">
+      <div class="navbar__inner">
+        <a class="brand" href="#home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 4 L26 13 V26 H20 V18 H12 V26 H6 V13 Z" fill="currentColor"/></svg>
+          </span>
+          <span class="brand__text">
+            <strong data-i18n="brandName">بلدية تفوح</strong>
+            <small data-i18n="brandSub">تابعة لوزارة الحكم المحلي </small>
+          </span>
+        </a>
+        <nav class="navbar__nav" aria-label="Primary">
+          <a href="#home" class="is-active" data-i18n="navHome">الرئيسية</a>
+          <a href="#about" data-i18n="navAbout">عن البلدية</a>
+          <a href="#services" data-i18n="navServices">الخدمات</a>
+          <a href="#news" data-i18n="navNews">المركز الإعلامي</a>
+          <a href="#contact" data-i18n="navContact">اتصل بنا</a>
+        </nav>
+        <div class="navbar__cta">
+          <a href="login.html" class="btn btn--primary">
+            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <span data-i18n="navCta">الخدمات الإلكترونية</span>
+          </a>
+        </div>
+        <button class="navbar__burger" id="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="navbar__sheet" id="navSheet" hidden>
+        <a href="#home" data-i18n="navHome">الرئيسية</a>
+        <a href="#about" data-i18n="navAbout">عن الRenderة</a>
+        <a href="#services" data-i18n="navServices">الخدمات</a>
+        <a href="#news" data-i18n="navNews">المركز الإعلامي</a>
+        <a href="#contact" data-i18n="navContact">اتصل بنا</a>
+        <a href="#user" class="btn btn--primary" data-i18n="userPortal">بوابة المستخدم</a>
+        <a href="#admin" class="btn btn--ghost" data-i18n="adminPortal">بوابة الإدارة</a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__pattern"></div>
+        <div class="hero__overlay"></div>
+      </div>
+      <div class="hero__inner">
+        <div class="hero__text">
+          <span class="badge badge--gold" data-i18n="heroBadge">منصة الخدمات البلدية</span>
+          <h1 class="hero__title" data-i18n="heroTitle">نخدمكم على مدار الساعة،<br/>بأبسط الخطوات</h1>
+          <p class="hero__lede" data-i18n="heroLede">منصة موحّدة لجميع خدمات بلدية النخيل. أنجز معاملاتك، تتبّع طلباتك، وادفع رسومك إلكترونيًا بكل سهولة وأمان، من أي مكان وفي أي وقت.</p>
+          <div class="hero__cta">
+            <a href="#user" class="btn btn--primary btn--lg">
+              <span data-i18n="heroCta1">ابدأ الخدمة</span>
+              <svg viewBox="0 0 24 24" width="16" height="16"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M19 12H5M11 18l-6-6 6-6"/></svg>
+            </a>
+            <a href="#services" class="btn btn--ghost btn--lg" data-i18n="heroCta2">استكشف الخدمات</a>
+          </div>
+          <div class="hero__stats">
+            <div><strong data-i18n="stat1v">٤٢</strong><span data-i18n="stat1l">خدمة إلكترونية</span></div>
+            <div><strong data-i18n="stat2v">٩٨٪</strong><span data-i18n="stat2l">نسبة الإنجاز</span></div>
+            <div><strong data-i18n="stat3v">٢٤/٧</strong><span data-i18n="stat3l">متاح دائمًا</span></div>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__card hero__card--main">
+            <div class="hero__card-head">
+              <span class="dot dot--green"></span>
+              <span data-i18n="cardBuildTitle">طلب رخصة بناء</span>
+              <span class="tag tag--ok" data-i18n="cardBuildStatus">قيد المعالجة</span>
+            </div>
+            <div class="hero__card-body">
+              <div class="kv"><span data-i18n="cardBuildKv1">رقم الطلب</span><strong>R-2026-08921</strong></div>
+              <div class="kv"><span data-i18n="cardBuildKv2">المدة المتوقعة</span><strong>7 days</strong></div>
+              <div class="progress"><div class="progress__bar" style="width:64%"></div></div>
+              <div class="hero__card-foot">
+                <span data-i18n="cardBuildFoot1">تم التقديم ١٢ محرم ١٤٤٧هـ</span>
+                <span data-i18n="cardBuildFoot2">الخطوة ٣ من ٥</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero__card hero__card--side">
+            <div class="hero__card-head">
+              <span class="dot dot--gold"></span>
+              <span data-i18n="cardBillTitle">دفع فاتورة</span>
+            </div>
+            <div class="hero__card-body">
+              <div class="bill">
+                <span data-i18n="cardBillText">فاتورة خدمات شهر محرّم</span>
+                <strong>350 SAR</strong>
+              </div>
+              <button class="btn btn--primary btn--block" data-i18n="cardPay">سدد الآن</button>
+            </div>
+          </div>
+          <div class="hero__card hero__card--msg">
+            <div class="msg__avatar">م.ع</div>
+            <div>
+              <strong data-i18n="cardMsg">ردّت البلدية على شكواك</strong>
+              <span data-i18n="cardMsgTime">منذ ١٢ دقيقة</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK SERVICES -->
+    <section class="section" id="quick">
+      <div class="section__head section__head--center">
+        <span class="eyebrow" data-i18n="quickTitle">الخدمات السريعة</span>
+        <h2 class="h2" data-i18n="quickTitle">ابدأ من هنا</h2>
+        <p class="lede" data-i18n="quickLede">أكثر الخدمات استخدامًا متاحة بنقرة واحدة</p>
+      </div>
+      <div class="quickgrid" id="quickgrid"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section section--about" id="about">
+      <div class="about__grid">
+        <div class="about__copy">
+          <span class="eyebrow" data-i18n="aboutEyebrow">عن البلدية</span>
+          <h2 class="h2" data-i18n="aboutTitle">نعمل لخدمتكم وتطوير مدينتكم</h2>
+          <p data-i18n="aboutP1"></p>
+          <p data-i18n="aboutP2"></p>
+          <ul class="kpis">
+            <li><strong data-i18n="kpi1v">٢٥٠ ألف</strong><span data-i18n="kpi1l">نسمة مستفيدة</span></li>
+            <li><strong data-i18n="kpi2v">١٢ حيًّا</strong><span data-i18n="kpi2l">في النطاق البلدي</span></li>
+            <li><strong data-i18n="kpi3v">١٥٠٠ كم²</strong><span data-i18n="kpi3l">مساحة إجمالية</span></li>
+            <li><strong data-i18n="kpi4v">٤.٧/٥</strong><span data-i18n="kpi4l">تقييم رضا المستفيدين</span></li>
+          </ul>
+        </div>
+        <div class="about__visual">
+          <div class="about__photo">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1546484959-f9a381d1330d?auto=format&fit=crop&w=1200&q=80" alt="" />
+            <div class="about__caption" data-i18n="aboutCaption">مقر البلدية الرئيسي — حي النخيل</div>
+          </div>
+          <div class="about__pillars">
+            <div class="pillar">
+              <div class="pillar__icon" style="background:#e8f3f0;color:#0e6b53">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 21V9l9-6 9 6v12M9 21v-7h6v7"/></svg>
+              </div>
+              <strong data-i18n="pillar1t">التطوير العمراني</strong>
+              <span data-i18n="pillar1d">تخطيط وتنظيم المدن والأحياء</span>
+            </div>
+            <div class="pillar">
+              <div class="pillar__icon" style="background:#fdf5e3;color:#a07a0c">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 3v3m0 12v3m9-9h-3M6 12H3m13.5-6.5-2 2m-7 7-2 2m0-11 2 2m7 7 2 2"/></svg>
+              </div>
+              <strong data-i18n="pillar2t">الخدمات العامة</strong>
+              <span data-i18n="pillar2d">نظافة، إنارة، حدائق، طرق</span>
+            </div>
+            <div class="pillar">
+              <div class="pillar__icon" style="background:#eaf4f8;color:#1e6b85">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 7h18M3 12h18M3 17h12"/></svg>
+              </div>
+              <strong data-i18n="pillar3t">التراخيص</strong>
+              <span data-i18n="pillar3d">بناء، مهن، أنشطة تجارية</span>
+            </div>
+            <div class="pillar">
+              <div class="pillar__icon" style="background:#f0eaf6;color:#5e3b8a">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 2 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3Z"/></svg>
+              </div>
+              <strong data-i18n="pillar4t">الرقابة</strong>
+              <span data-i18n="pillar4d">السلامة، الغذاء، الأسواق</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section section--alt" id="services">
+      <div class="section__head section__head--center">
+        <span class="eyebrow" data-i18n="srvEyebrow">دليل الخدمات</span>
+        <h2 class="h2" data-i18n="srvTitle">خدماتنا الإلكترونية</h2>
+        <p class="lede" data-i18n="srvLede">٤٢ خدمة متاحة على مدار الساعة. اختر القسم المناسب</p>
+      </div>
+      <div class="filterbar">
+        <button class="filter is-active" data-filter="all" data-i18n="fAll">الكل</button>
+        <button class="filter" data-filter="build" data-i18n="fBuild">البناء والتخطيط</button>
+        <button class="filter" data-filter="business" data-i18n="fBiz">التراخيص التجارية</button>
+        <button class="filter" data-filter="health" data-i18n="fHealth">الصحة والسلامة</button>
+        <button class="filter" data-filter="complaint" data-i18n="fComp">الشكاوى والملاحظات</button>
+        <button class="filter" data-filter="pay" data-i18n="fPay">المدفوعات</button>
+      </div>
+      <div class="services" id="servicesGrid"></div>
+    </section>
+
+    <!-- NEWS -->
+    <section class="section" id="news">
+      <div class="section__head">
+        <span class="eyebrow" data-i18n="newsEyebrow">المركز الإعلامي</span>
+        <h2 class="h2" data-i18n="newsTitle">آخر الأخبار والإعلانات</h2>
+        <a href="#" class="link" data-i18n="newsAll">جميع الأخبار ←</a>
+      </div>
+      <div class="news" id="newsGrid"></div>
+    </section>
+
+    <!-- COUNTERS -->
+    <section class="counters">
+      <div class="counters__inner">
+        <div class="counter"><strong data-target="12480">0</strong><span data-i18n="c1v">طلب منجز هذا العام</span></div>
+        <div class="counter"><strong data-target="42">0</strong><span data-i18n="c2v">خدمة إلكترونية</span></div>
+        <div class="counter"><strong data-target="98">0</strong><span data-i18n="c3v">٪ نسبة رضا المستفيدين</span></div>
+        <div class="counter"><strong data-target="12">0</strong><span data-i18n="c4v">حيًّا تحت الخدمة</span></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section--alt" id="contact">
+      <div class="contact">
+        <div class="contact__info">
+          <span class="eyebrow" data-i18n="contactEyebrow">تواصل معنا</span>
+          <h2 class="h2" data-i18n="contactTitle">نحن هنا لخدمتك</h2>
+          <p data-i18n="contactP"></p>
+          <ul class="contact__list">
+            <li>
+              <div class="contact__icon">📍</div>
+              <div><strong data-i18n="contactLoc">المقر الرئيسي</strong><span data-i18n="contactLocV"> فلسطين الخليل اول البلد</span>ة</span></div>
+            </li>
+            <li>
+              <div class="contact__icon">☎</div>
+              <div><strong data-i18n="contactTel">الرقم الموحد</strong><span dir="ltr" data-i18n="contactTelV">+966 11 234 5678</span></div>
+            </li>
+            <li>
+              <div class="contact__icon">✉</div>
+              <div><strong data-i18n="contactMail">البريد الإلكتروني</strong><span dir="ltr" data-i18n="contactMailV">info@nakheel.gov.sa</span></div>
+            </li>
+            <li>
+              <div class="contact__icon">⏰</div>
+              <div><strong data-i18n="contactHours">ساعات العمل</strong><span data-i18n="contactHoursV">الأحد - الخميس · ٨ صباحًا - ٤ مساءً</span></div>
+            </li>
+          </ul>
+        </div>
+        <form class="contact__form" id="contactForm" novalidate>
+          <h3 data-i18n="contactFormTitle">أرسل رسالة</h3>
+          <div class="row">
+            <label class="field"><span data-i18n="fieldName">الاسم الكامل</span><input type="text" name="name" required data-i18n-placeholder="phName" placeholder="أدخل اسمك" /></label>
+            <label class="field"><span data-i18n="fieldPhone">رقم الجوال</span><input type="tel" name="phone" required data-i18n-placeholder="phPhone" placeholder="05XXXXXXXX" /></label>
+          </div>
+          <label class="field"><span data-i18n="fieldEmail">البريد الإلكتروني</span><input type="email" name="email" required data-i18n-placeholder="phEmail" placeholder="you@example.com" /></label>
+          <label class="field"><span data-i18n="fieldType">نوع الطلب</span><select name="type" required></select></label>
+          <label class="field"><span data-i18n="fieldMsg">الرسالة</span><textarea name="message" rows="4" required data-i18n-placeholder="phMsg" placeholder="اكتب رسالتك هنا..."></textarea></label>
+          <button type="submit" class="btn btn--primary btn--block">
+            <span id="cfText" data-i18n="sendBtn">إرسال الرسالة</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer__top">
+        <div class="footer__col footer__col--brand">
+          <a class="brand brand--footer" href="#home">
+            <span class="brand__mark"><svg viewBox="0 0 32 32" width="28" height="28"><path d="M16 4 L26 13 V26 H20 V18 H12 V26 H6 V13 Z" fill="currentColor"/></svg></span>
+            <span class="brand__text">
+              <strong data-i18n="brandName">بلدية تفوح </strong>
+              <small data-i18n="brandSub">وزارة الحكم المحلي </small>
+            </span>
+          </a>
+          <p data-i18n="footerBrandP"></p>
+          <div class="socials">
+            <a href="#" aria-label="Twitter">𝕏</a>
+            <a href="#" aria-label="Instagram">in</a>
+            <a href="#" aria-label="YouTube">▶</a>
+            <a href="#" aria-label="WhatsApp">w</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footerLinksTitle">روابط سريعة</h4>
+          <a href="#home" data-i18n="navHome">الرئيسية</a>
+          <a href="#about" data-i18n="navAbout">عن البلدية</a>
+          <a href="#services" data-i18n="navServices">الخدمات</a>
+          <a href="#news" data-i18n="navNews">الأخبار</a>
+          <a href="#contact" data-i18n="navContact">اتصل بنا</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footerEservicesTitle">الخدمات الإلكترونية</h4>
+          <a href="#user" data-i18n="footSrv1">رخصة بناء</a>
+          <a href="#user" data-i18n="footSrv2">ترخيص نشاط تجاري</a>
+          <a href="#user" data-i18n="footSrv3">شهادة صحية</a>
+          <a href="#user" data-i18n="footSrv4">دفع الفواتير</a>
+          <a href="#user" data-i18n="footSrv5">تقديم شكوى</a>
+        </div>
+        <div class="footer__col">
+          <h4 data-i18n="footerContactTitle">تواصل</h4>
+          <p data-i18n="contactLocV"></p>
+          <p dir="ltr" data-i18n="contactTelV"></p>
+          <p dir="ltr" data-i18n="contactMailV"></p>
+          <div class="langswitch langswitch--dark" style="margin-top:12px">
+            <button class="langswitch__btn is-active" data-lang-btn="ar">ع</button>
+            <button class="langswitch__btn" data-lang-btn="en">EN</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer__base">
+        <span data-i18n="footerCR"></span>
+        <span>·</span>
+        <a href="#" data-i18n="footPrivacy">سياسة الخصوصية</a>
+        <span>·</span>
+        <a href="#" data-i18n="footTerms">الشروط والأحكام</a>
+        <span>·</span>
+        <a href="#" data-i18n="footSitemap">خريطة الموقع</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- =================== USER PORTAL =================== -->
+  <div id="view-user" class="view view--user">
+    <aside class="sidebar" id="userSidebar">
+      <a class="brand brand--sidebar" href="#home">
+        <span class="brand__mark"><svg viewBox="0 0 32 32" width="24" height="24"><path d="M16 4 L26 13 V26 H20 V18 H12 V26 H6 V13 Z" fill="currentColor"/></svg></span>
+        <span class="brand__text">
+          <strong data-i18n="userPortal">بوابة المستخدم</strong>
+          <small data-i18n="brandName">بلدية النخيل</small>
+        </span>
+      </a>
+      <nav class="sidebar__nav" data-sidebar="user">
+        <a href="#user/overview" data-route="user/overview" class="is-active"><span class="ico">▦</span> <span data-i18n="userOverview">نظرة عامة</span></a>
+        <a href="#user/services" data-route="user/services"><span class="ico">＋</span> <span data-i18n="userNewRequest">طلب خدمة جديدة</span></a>
+        <a href="#user/requests" data-route="user/requests"><span class="ico">📋</span> <span data-i18n="userMyRequests">طلباتي</span> <span class="pill">4</span></a>
+        <a href="#user/bills" data-route="user/bills"><span class="ico">💳</span> <span data-i18n="userBills">المدفوعات والفواتير</span></a>
+        <a href="#user/complaints" data-route="user/complaints"><span class="ico">💬</span> <span data-i18n="userComplaints">الشكاوى والملاحظات</span></a>
+        <a href="#user/notifications" data-route="user/notifications"><span class="ico">🔔</span> <span data-i18n="userNotifications">الإشعارات</span> <span class="pill pill--red">2</span></a>
+        <a href="#user/profile" data-route="user/profile"><span class="ico">👤</span> <span data-i18n="userProfile">الملف الشخصي</span></a>
+      </nav>
+      <div class="sidebar__foot">
+        <div class="langswitch" style="margin-bottom:8px">
+          <button class="langswitch__btn is-active" data-lang-btn="ar">ع</button>
+          <button class="langswitch__btn" data-lang-btn="en">EN</button>
+        </div>
+        <button id="userLogoutBtn" class="btn btn--ghost btn--block" type="button">تسجيل الخروج</button>
+        <a href="#home" class="btn btn--ghost btn--block" data-i18n="backToSite" style="margin-top:8px">← العودة للموقع</a>
+      </div>
+    </aside>
+    <div class="portal">
+      <header class="portal__topbar">
+        <button class="portal__burger" data-toggle="userSidebar" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="portal__title">
+          <h2 id="userPageTitle" data-i18n="userPageTitle">نظرة عامة</h2>
+          <p id="userPageSub" data-i18n="userPageSub">مرحبًا بعودتك، عبد الرحمن</p>
+        </div>
+        <div class="portal__actions">
+          <button class="iconbtn" data-i18n-aria="search" aria-label="بحث">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m20 20-3.5-3.5M11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg>
+          </button>
+          <button class="iconbtn" data-i18n-aria="newNotif" aria-label="إشعار جديد" data-go="#user/notifications">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8m5 12a2 2 0 0 0 4 0"/></svg>
+            <span class="badge">2</span>
+          </button>
+          <div class="userchip">
+            <div class="userchip__avatar">ع.ر</div>
+            <div class="userchip__meta">
+              <strong>عبد الرحمن العتيبي</strong>
+              <span>ID: 1098765432</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="portal__main" id="userMain"></main>
+    </div>
+  </div>
+
+  <!-- =================== ADMIN PORTAL =================== -->
+  <div id="view-admin" class="view view--admin">
+    <aside class="sidebar sidebar--admin" id="adminSidebar">
+      <a class="brand brand--sidebar" href="#home">
+        <span class="brand__mark" style="color:#d4a017"><svg viewBox="0 0 32 32" width="24" height="24"><path d="M16 4 L26 13 V26 H20 V18 H12 V26 H6 V13 Z" fill="currentColor"/></svg></span>
+        <span class="brand__text">
+          <strong data-i18n="adminPortal">بوابة الإدارة</strong>
+          <small data-i18n="adminDash">لوحة التحكم</small>
+        </span>
+      </a>
+      <nav class="sidebar__nav" data-sidebar="admin">
+        <a href="#admin/overview" data-route="admin/overview" class="is-active"><span class="ico">▦</span> <span data-i18n="adminDash">لوحة المعلومات</span></a>
+        <a href="#admin/requests" data-route="admin/requests"><span class="ico">📋</span> <span data-i18n="adminRequests">الطلبات</span> <span class="pill pill--red">12</span></a>
+        <a href="#admin/services" data-route="admin/services"><span class="ico">＋</span> <span data-i18n="adminServices">إدارة الخدمات</span></a>
+        <a href="#admin/news" data-route="admin/news"><span class="ico">📰</span> <span data-i18n="adminNews">إدارة الأخبار</span></a>
+        <a href="#admin/complaints" data-route="admin/complaints"><span class="ico">💬</span> <span data-i18n="adminComplaints">الشكاوى</span> <span class="pill">7</span></a>
+        <a href="#admin/users" data-route="admin/users"><span class="ico">👥</span> <span data-i18n="adminUsers">المستخدمون</span></a>
+        <a href="#admin/finance" data-route="admin/finance"><span class="ico">💰</span> <span data-i18n="adminFinance">المالية</span></a>
+        <a href="#admin/settings" data-route="admin/settings"><span class="ico">⚙</span> <span data-i18n="adminSettings">الإعدادات</span></a>
+      </nav>
+      <div class="sidebar__foot">
+        <div class="langswitch langswitch--dark" style="margin-bottom:8px">
+          <button class="langswitch__btn is-active" data-lang-btn="ar">ع</button>
+          <button class="langswitch__btn" data-lang-btn="en">EN</button>
+        </div>
+        <a href="#home" class="btn btn--ghost btn--block" data-i18n="backToSite">← العودة للموقع</a>
+      </div>
+    </aside>
+    <div class="portal">
+      <header class="portal__topbar portal__topbar--admin">
+        <button class="portal__burger" data-toggle="adminSidebar" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="portal__title">
+          <h2 id="adminPageTitle" data-i18n="adminPageTitle">لوحة المعلومات</h2>
+          <p id="adminPageSub" data-i18n="adminPageSub">مرحبًا، م. خالد — مدير النظام</p>
+        </div>
+        <div class="portal__actions">
+          <button class="iconbtn" data-i18n-aria="search" aria-label="بحث">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="none" stroke="currentColor" stroke-width="1.6" d="m20 20-3.5-3.5M11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg>
+          </button>
+          <button class="iconbtn" data-i18n-aria="newNotif" aria-label="إشعار جديد">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8m5 12a2 2 0 0 0 4 0"/></svg>
+            <span class="badge">5</span>
+          </button>
+          <div class="userchip">
+            <div class="userchip__avatar" style="background:linear-gradient(135deg,#d4a017,#a07a0c);color:#fff">خ.م</div>
+            <div class="userchip__meta">
+              <strong>م. خالد المنصور</strong>
+              <span>مدير النظام</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="portal__main" id="adminMain"></main>
+    </div>
+  </div>
+
+  <!-- shared toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
